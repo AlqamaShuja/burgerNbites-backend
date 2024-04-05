@@ -12,15 +12,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors({ 
-    origin: "*", // credentials: true,
-}));
+app.use(cors({ origin: "*", }));
+
 // Routes
 allRoutes(app);
 
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 1010;
 app.listen(port, () => {
     console.log(`Server is running on Port ${port}`);
 });

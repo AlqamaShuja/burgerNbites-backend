@@ -1,6 +1,6 @@
 const { logReqBody } = require("../middleware/logReqBody");
 const authRoute = require("./authRoute");
-const fileRoute = require("./fileRoute");
+const productRoute = require("./productRoute");
 
 const allRoutes = (app) => {
   app.use(logReqBody);
@@ -9,7 +9,7 @@ const allRoutes = (app) => {
   );
   // app.use("/api", verifyToken);
   app.use("/api/auth", authRoute);
-  app.use("/api/files", fileRoute);
+  app.use("/api/product", productRoute);
 
   // When No Route Match
   app.use("*", (req, res) => res.status(404).send({ success: false, data: 'No route matched' }));
